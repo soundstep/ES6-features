@@ -12,11 +12,11 @@ Useful links:
 * http://kangax.github.io/compat-table/es6/
 * https://6to5.org/docs/compare/#comparison-to-other-transpilers
 
-## Site with (created with [jspm](http://jspm.io/))
+## App with (created with [jspm](http://jspm.io/))
 
 	$ npm install -g jspm
 	$ npm install -g live-server
-	$ cd site/
+	$ cd app/
 	$ jspm install
 	$ live-server
 
