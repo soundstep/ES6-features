@@ -1,0 +1,8 @@
+{
+  "jspm": {
+    "name": "ES6-Site",
+    "dependencies": {
+      "soma.js": "npm:soma.js@^2.1.1"
+    }
+  }
+}

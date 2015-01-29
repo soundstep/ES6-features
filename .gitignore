@@ -52,3 +52,5 @@ user.properties*
 
 /tools/cli/java/bin/*
 /tools/docs/NaturalDocs/library/*
+
+app/jspm_packages
