@@ -7,7 +7,7 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "6to5": "^2.7.2"
+  "devDependencies": {
+    "babel": "^4.6.4"
   }
 }

@@ -13,10 +13,8 @@ temperature.map(degToKelvin); // [273, 310, 373]
 
 // with ES6
 
-
 // the following is currently not working: https://github.com/6to5/6to5/issues/412
 // this is an ES7 feature: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Array_comprehensions
-
 
 // Array created with 1 loop
 // var temperature = [0, 37, 100];

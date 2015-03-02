@@ -3,9 +3,7 @@
 // array that represents a list of parameters
 
 function push(array) {
-  var items = [];
-
-  for (var _key = 1; _key < arguments.length; _key++) {
+  for (var _len = arguments.length, items = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
     items[_key - 1] = arguments[_key];
   }
 

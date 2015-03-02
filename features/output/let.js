@@ -1,6 +1,3 @@
-// JavaScript variables are function-scoped
-// let is block-scoped
-
 "use strict";
 
 // ------------------------------------------------------------------
@@ -25,3 +22,5 @@ for (var i = 0; i < 10; i++) {
   })();
 }
 es[6](); // Upcoming edition of ECMAScript is ES6
+// JavaScript variables are function-scoped
+// let is block-scoped

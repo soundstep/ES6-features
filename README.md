@@ -3,7 +3,7 @@
 ## Features (compiled with [6to5](https://6to5.org/))
 
 	$ npm install
-	$ 6to5 features/src --out-dir features/output
+	$ ./node_modules/.bin/babel features/src --out-dir features/output
 
 	$ node features/output/let.js
 
@@ -16,7 +16,7 @@ Useful links:
 
 	$ npm install -g jspm
 	$ npm install -g live-server
-	$ cd site/
+	$ cd app/
 	$ jspm install
 	$ live-server
 

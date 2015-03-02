@@ -11,7 +11,7 @@ es6.set("edition", 6); // key is string
 es6.set(262, "standard"); // key is number
 es6.set(undefined, "nah"); // key is undefined
 
-var hello = function () {
+var hello = function hello() {
   console.log("hello");
 };
 es6.set(hello, "Hello ES6!"); // key is function

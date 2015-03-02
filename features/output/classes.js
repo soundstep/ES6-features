@@ -1,31 +1,36 @@
 "use strict";
 
-var _inherits = function (child, parent) {
-  if (typeof parent !== "function" && parent !== null) {
-    throw new TypeError("Super expression must either be null or a function, not " + typeof parent);
+var _get = function get(object, property, receiver) { var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc && desc.writable) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
+
+var _prototypeProperties = function (child, staticProps, instanceProps) { if (staticProps) Object.defineProperties(child, staticProps); if (instanceProps) Object.defineProperties(child.prototype, instanceProps); };
+
+var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
+
+// class
+
+var Language = (function () {
+  function Language(name, founder, year) {
+    _classCallCheck(this, Language);
+
+    this.name = name;
+    this.founder = founder;
+    this.year = year;
   }
-  child.prototype = Object.create(parent && parent.prototype, {
-    constructor: {
-      value: child,
-      enumerable: false,
+
+  _prototypeProperties(Language, null, {
+    summary: {
+      value: function summary() {
+        return this.name + " was created by " + this.founder + " in " + this.year;
+      },
       writable: true,
       configurable: true
     }
   });
-  if (parent) child.__proto__ = parent;
-};
 
-// class
-
-var Language = function Language(name, founder, year) {
-  this.name = name;
-  this.founder = founder;
-  this.year = year;
-};
-
-Language.prototype.summary = function () {
-  return this.name + " was created by " + this.founder + " in " + this.year;
-};
+  return Language;
+})();
 
 var js = new Language();
 
@@ -37,17 +42,18 @@ console.log(js.summary());
 
 // subclass
 
-var MetaLanguage = (function () {
-  var _Language = Language;
-  var MetaLanguage = function MetaLanguage(name, founder, year, version) {
-    _Language.call(this, name, founder, year);
-    this.version = version;
-  };
+var MetaLanguage = (function (Language) {
+  function MetaLanguage(name, founder, year, version) {
+    _classCallCheck(this, MetaLanguage);
 
-  _inherits(MetaLanguage, _Language);
+    _get(Object.getPrototypeOf(MetaLanguage.prototype), "constructor", this).call(this, name, founder, year);
+    this.version = version;
+  }
+
+  _inherits(MetaLanguage, Language);
 
   return MetaLanguage;
-})();
+})(Language);
 
 var html = new MetaLanguage();
 
