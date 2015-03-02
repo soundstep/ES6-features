@@ -1,6 +1,6 @@
 # ES6
 
-## Features (compiled with [6to5](https://6to5.org/))
+## Features (compiled with [Babel](https://babeljs.io/))
 
 	$ npm install
 	$ ./node_modules/.bin/babel features/src --out-dir features/output
