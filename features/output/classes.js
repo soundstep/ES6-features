@@ -4,7 +4,7 @@ var _get = function get(object, property, receiver) { var desc = Object.getOwnPr
 
 var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
 
-var _prototypeProperties = function (child, staticProps, instanceProps) { if (staticProps) Object.defineProperties(child, staticProps); if (instanceProps) Object.defineProperties(child.prototype, instanceProps); };
+var _createClass = (function () { function defineProperties(target, props) { for (var key in props) { var prop = props[key]; prop.configurable = true; if (prop.value) prop.writable = true; } Object.defineProperties(target, props); } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
 
@@ -19,13 +19,11 @@ var Language = (function () {
     this.year = year;
   }
 
-  _prototypeProperties(Language, null, {
+  _createClass(Language, {
     summary: {
       value: function summary() {
         return this.name + " was created by " + this.founder + " in " + this.year;
-      },
-      writable: true,
-      configurable: true
+      }
     }
   });
 
@@ -42,7 +40,7 @@ console.log(js.summary());
 
 // subclass
 
-var MetaLanguage = (function (Language) {
+var MetaLanguage = (function (_Language) {
   function MetaLanguage(name, founder, year, version) {
     _classCallCheck(this, MetaLanguage);
 
@@ -50,7 +48,7 @@ var MetaLanguage = (function (Language) {
     this.version = version;
   }
 
-  _inherits(MetaLanguage, Language);
+  _inherits(MetaLanguage, _Language);
 
   return MetaLanguage;
 })(Language);
